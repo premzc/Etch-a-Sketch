@@ -20,14 +20,17 @@
         const gridItem = document.createElement('div');
         gridItem.classList.add('grid-item');
         gridContainer.appendChild(gridItem);
+
+         gridItem.addEventListener('mouseover', () => {
+          gridItem.style.backgroundColor = generateRandomColor();
+        })
       }
       
       const rows = squareNum;
       const columns = squareNum;
       
       gridContainer.style.gridTemplateColumns = `repeat(${columns}, 1fr)`;
-      gridContainer.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
-    }
+      gridContainer.style.gridTemplateRows = `repeat(${rows}, 1fr)`;}
 
   
 
@@ -37,6 +40,14 @@
       generateSquares(squareNum);
     }else{
       alert('Enter valid number grater than zero');
+    }
+
+
+    function generateRandomColor(){
+      const randomR = Math.floor(Math.random() * 255);
+      const randomG = Math.floor(Math.random() * 255);
+      const randomB = Math.floor(Math.random() * 255);
+      return `rgb(${randomR},${randomG},${randomB})`;
     }
   </script>
 </body>
