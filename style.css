@@ -1,0 +1,18 @@
+body{
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+}
+.grid-container{
+  display: grid;
+  border: 5px solid red;
+  max-width: 500px;
+  height: 100%;
+  width: 100%;
+}
+.grid-item{
+border: 1px solid gray;  
+display: flex;
+justify-content: center;
+align-items: center;
+}
