@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="grid-container">
+
+  </div>
+
+  <script>
+    
+    function generateSquares(squareNum){
+      const gridContainer = document.querySelector('.grid-container');
+      gridContainer.innerHTML = '';
+      for (let i = 1; i <= squareNum * squareNum; i++) {
+        const gridItem = document.createElement('div');
+        gridItem.classList.add('grid-item');
+        gridContainer.appendChild(gridItem);
+      }
+      
+      const rows = squareNum;
+      const columns = squareNum;
+      
+      gridContainer.style.gridTemplateColumns = `repeat(${columns}, 1fr)`;
+      gridContainer.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
+    }
+
+  
+
+    const square = prompt('Enter number of squares for both side');
+    const squareNum = parseInt(square);
+    if(!NaN && squareNum > 0){
+      generateSquares(squareNum);
+    }else{
+      alert('Enter valid number grater than zero');
+    }
+  </script>
+</body>
+</html>
